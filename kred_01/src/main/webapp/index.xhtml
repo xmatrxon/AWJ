@@ -13,15 +13,21 @@
 		<h:form id="bla">
 			<h:panelGrid id="grid" columns="3" cellpadding="5">
 				<p:outputLabel for="x" value="Kwota:"/>
-		  		<p:inputText id="x" value="#{kalkulator.x}" required="true" requiredMessage="Brak kwoty" />
+		  		<p:inputText id="x" value="#{kalkulator.x}" required="true" requiredMessage="Brak kwoty" converterMessage="Kwota musi być liczbą" validatorMessage="Kwota musi wynosić co najmniej 100 zł">
+		  		<f:validateLongRange minimum="100"/>
+		  		</p:inputText>
 		  		<p:message for="x"/>
 		  		
 		  		<p:outputLabel for="y" value="Ile lat:"/>
-		  		<p:inputText id="y" value="#{kalkulator.y}" required="true" requiredMessage="Brak ilości lat" />
+		  		<p:inputText id="y" value="#{kalkulator.y}" required="true" requiredMessage="Brak ilości lat" converterMessage="Ilość lat musi być liczbą" validatorMessage="Liczba lat musi wynosić co najmniej 1 rok">
+		  		<f:validateLongRange minimum="1"/>
+		  		</p:inputText>
 		  		<p:message for="y"/>
 		  		
 		  		<p:outputLabel for="z" value="Oprocentowanie:"/>
-				<p:inputText id="z" value="#{kalkulator.z}" required="true" requiredMessage="Brak oprocentowania" />
+				<p:inputText id="z" value="#{kalkulator.z}" required="true" requiredMessage="Brak oprocentowania" converterMessage="Oprocentowanie musi być liczbą" validatorMessage="Oprocentowanie musi wynosić co najmniej 1 procent oraz musi wynosić maksymalnie 100 procent">
+				<f:validateLongRange minimum="1" maximum="100"/>
+				</p:inputText>
 				<p:message for="z"/>
 				
 				<p:commandButton value="Oblicz" action="#{kalkulator.calc()}" update="@form" styleClass="rounded-button"/>
