@@ -1,0 +1,33 @@
+body {
+	background-color: tomato;
+	overflow: hidden;
+}
+
+.tyt {
+	text-align: center;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.kalk {
+	width: 100%;
+}
+
+.kalk2 {
+	align-self: top;
+}
+
+.btn1 {
+	left: 100%;
+}
+
+.btn2 {
+	left: 30%
+}

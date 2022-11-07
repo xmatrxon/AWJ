@@ -7,13 +7,14 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>Wynik</title>
+	<h:outputStylesheet name="css/style.css" library="template" />
 </h:head>
 <h:body>
-	<p:panel header="Kalkulator miesięcznych odesetek" style="margin: 1em auto">
+	<p:panel styleClass="wrapper">
 		<p:messages />
 		<p:outputLabel value="Wynik: "/>#{kalkulator.result} zł
 		<h:form>
-			<p:commandButton value="Powrót" action="index" style="margin-top: 1em" styleClass="rounded-button" />
+			<p:commandButton value="Powrót" action="index" style="margin-top: 1em" styleClass="rounded-button btn2" />
 		</h:form>
 	</p:panel>
 </h:body>
